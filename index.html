@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/519802e276.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./styles/style.css" />
+
+    <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
+  </head>
+  <body onkeydown="leftRight(event)">
+    <div class="bg-container"></div>
+    <main>
+      <section class="testimonial">
+        <div class="testimonial__slides">
+          <!-- first slide -->
+          <div class="testimonial__slide">
+            <img
+              class="testimonial__img"
+              src="./images/image-tanya.jpg"
+              alt="Tanya image"
+            />
+
+            <div class="testimonial__text">
+              <p class="testimonial__body">
+                “ I’ve been interested in coding for a while but never taken the
+                jump, until now. I couldn’t recommend this course enough. I’m
+                now in the job of my dreams and so excited about the future. ”
+              </p>
+              <div class="testimonial__person-info">
+                <h4 class="testimonial__person-name">Tanya Sinclair</h4>
+                <span class="testimonial__person-job">UX Engineer</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- second slide -->
+          <div class="testimonial__slide">
+            <img
+              class="testimonial__img"
+              src="./images/image-john.jpg"
+              alt="John image"
+            />
+
+            <div class="testimonial__text">
+              <p class="testimonial__body">
+                “ If you want to lay the best foundation possible I’d recommend
+                taking this course. The depth the instructors go into is
+                incredible. I now feel so confident about starting up as a
+                professional developer. ”
+              </p>
+              <div class="testimonial__person-info">
+                <h4 class="testimonial__person-name">John Tarkpor</h4>
+                <p class="testimonial__person-job">
+                  Junior Front-end Developer
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial__btns">
+          <i
+            class="testimonial__btn testimonial__btn--prev fas fa-angle-left"
+            onclick="slideLeft()"
+            tabindex="1"
+          ></i>
+          <i
+            class="testimonial__btn testimonial__btn--next fas fa-angle-right"
+            onclick="slideRight()"
+            tabindex="2"
+          ></i>
+        </div>
+      </section>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a
+        class="attribution__link"
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a class="attribution__link" href="#">Your Name Here</a>.
+    </div>
+
+    <!-- script -->
+    <script src="/index.js"></script>
+  </body>
+</html>

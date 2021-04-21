@@ -1,0 +1,310 @@
+:root {
+  --ff-primary: "Inter", sans-serif;
+  --fw-light: 300;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fs-h4: 0.95rem;
+  --fs-body: 1.1rem;
+  --fs-job: 0.9rem;
+  --dark-blue: hsl(240, 38%, 20%);
+  --grayish-blue: hsl(240, 18%, 77%);
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --fs-h4: 1rem;
+    --fs-body: 1.3rem;
+    --fs-job: 0.95rem;
+  }
+}
+
+@media (min-width: 992px) {
+  :root {
+    --fs-h4: 1.2rem;
+    --fs-body: 1.75rem;
+    --fs-job: 1.1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --fs-body: 2rem;
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+main {
+  min-height: calc(100vh - 44.8px);
+  width: 90vw;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.testimonial__slide {
+  width: 90vw;
+}
+
+.testimonial__img {
+  width: 250px;
+  border-radius: 5px;
+}
+
+.testimonial__btns {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background: white;
+  -webkit-box-shadow: 1px 7px 30px rgba(41, 16, 99, 0.2), -60px 7px 30px rgba(41, 16, 99, 0.2);
+          box-shadow: 1px 7px 30px rgba(41, 16, 99, 0.2), -60px 7px 30px rgba(41, 16, 99, 0.2);
+}
+
+.testimonial__btn {
+  cursor: pointer;
+  padding: 0.6rem 0.8rem;
+  color: rgba(27, 12, 95, 0.5);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.testimonial__btn:focus, .testimonial__btn:hover {
+  outline: none;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.attribution {
+  padding: 1rem;
+}
+
+body {
+  font-family: var(--ff-primary);
+  color: var(--dark-blue);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-light);
+  text-align: center;
+}
+
+.testimonial__person-name {
+  color: var(--dark-blue);
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-bold);
+}
+
+.testimonial__person-job {
+  font-size: var(--fs-h4);
+  color: var(--grayish-blue);
+  font-weight: var(--fw-medium);
+}
+
+.testimonial__btn {
+  font-size: 1.25rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution__link {
+  color: #3e52a3;
+}
+
+body {
+  background-image: url("/images/pattern-curve.svg");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: 80%;
+}
+
+.bg-container {
+  z-index: -500;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-image: url("/images/pattern-bg.svg"), url("/images/pattern-quotes.svg");
+  background-repeat: no-repeat;
+  background-position: top 27px center, center top 360px;
+  background-size: 320px, 60px;
+}
+
+main {
+  padding-top: 3.5rem;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.testimonial__slides {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+.testimonial__slides--active {
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.testimonial__slide {
+  padding: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.testimonial__body {
+  line-height: 1.5rem;
+  margin: 80px 0 1.25rem;
+  opacity: 0.9;
+}
+
+.testimonial__person-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.testimonial__person-name {
+  margin-bottom: 2px;
+}
+
+.testimonial__btns {
+  position: absolute;
+  left: 50%;
+  top: calc(250px + 3.5rem);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 19.6px;
+}
+
+@media screen and (min-width: 576px) {
+  main,
+  .testimonial__slide {
+    max-width: 540px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-size: 40%;
+  }
+  .bg-container {
+    max-width: 1260px;
+    background-position: center right 10%, top 30% left 20%;
+    background-size: 50%, 80px;
+  }
+  main,
+  .testimonial__slide {
+    width: 80vw;
+    max-width: 1000px;
+  }
+  main {
+    place-items: center;
+    padding-top: 44.8px;
+  }
+  .testimonial {
+    position: relative;
+  }
+  .testimonial__slide {
+    position: relative;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .testimonial__img {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    width: 50%;
+    margin-left: auto;
+  }
+  .testimonial__text {
+    position: absolute;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    width: 55%;
+  }
+  .testimonial__body {
+    margin: 0 0 1.5rem;
+    line-height: 1.75rem;
+    text-align: start;
+  }
+  .testimonial__btns {
+    top: 100%;
+    left: 30%;
+  }
+  .testimonial__person-info {
+    text-align: start;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .bg-container {
+    background-position: center right 10%, top 30% left 20%;
+    background-size: 50%, 100px;
+  }
+  .testimonial__body {
+    line-height: 2.25rem;
+    text-align: start;
+  }
+  .testimonial__person-info {
+    text-align: start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .testimonial__person-name {
+    margin: 0;
+    padding-right: 0.6rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .testimonial__body {
+    line-height: 2.75rem;
+    text-align: start;
+  }
+  .testimonial__btns {
+    border-radius: 25.6px;
+  }
+  .testimonial__btn {
+    padding: 0.8rem 1.1rem;
+    font-size: 1.6rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */

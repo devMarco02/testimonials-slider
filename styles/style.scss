@@ -1,0 +1,310 @@
+//=============VARIABLES
+:root {
+  --ff-primary: "Inter", sans-serif;
+
+  --fw-light: 300;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  --fs-h4: 0.95rem;
+  --fs-body: 1.1rem;
+  --fs-job: 0.9rem;
+
+  //===colors
+  --dark-blue: hsl(240, 38%, 20%);
+  --grayish-blue: hsl(240, 18%, 77%);
+
+  //box-shadow
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+}
+@media (min-width: 768px) {
+  :root {
+    --fs-h4: 1rem;
+    --fs-body: 1.3rem;
+    --fs-job: 0.95rem;
+  }
+}
+@media (min-width: 992px) {
+  :root {
+    --fs-h4: 1.2rem;
+    --fs-body: 1.75rem;
+    --fs-job: 1.1rem;
+  }
+}
+@media (min-width: 1200px) {
+  :root {
+    --fs-body: 2rem;
+  }
+}
+
+//=============RESET
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+//=============BASE STYLES (styles that doesn't change whatever the size of the screen)
+
+main {
+  min-height: calc(100vh - 44.8px);
+  width: 90vw;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.testimonial {
+  &__slide {
+    width: 90vw;
+  }
+
+  &__img {
+    width: 250px;
+    border-radius: 5px;
+  }
+
+  &__btns {
+    width: max-content;
+    background: white;
+    box-shadow: 1px 7px 30px rgba(41, 16, 99, 0.2),
+      -60px 7px 30px rgba(41, 16, 99, 0.2);
+  }
+  &__btn {
+    cursor: pointer;
+    padding: 0.6rem 0.8rem;
+    color: rgba(27, 12, 95, 0.5);
+    transition: all 0.5s;
+    &:focus,
+    &:hover {
+      outline: none;
+      transform: scale(1.2);
+    }
+  }
+}
+
+.attribution {
+  padding: 1rem;
+}
+
+//=============FONTS
+body {
+  font-family: var(--ff-primary);
+  color: var(--dark-blue);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-light);
+  text-align: center;
+}
+
+.testimonial {
+  &__person-name {
+    color: var(--dark-blue);
+    font-size: var(--fs-h4);
+    font-weight: var(--fw-bold);
+  }
+
+  &__person-job {
+    font-size: var(--fs-h4);
+    color: var(--grayish-blue);
+    font-weight: var(--fw-medium);
+  }
+
+  &__btn {
+    font-size: 1.25rem;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  &__link {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
+//=============mobile styles
+
+body {
+  background-image: url("/images/pattern-curve.svg");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: 80%;
+}
+
+.bg-container {
+  z-index: -500;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url("/images/pattern-bg.svg"),
+    url("/images/pattern-quotes.svg");
+  background-repeat: no-repeat;
+  background-position: top 27px center, center top 360px;
+  background-size: 320px, 60px;
+}
+
+main {
+  padding-top: 3.5rem;
+  display: grid;
+  align-items: flex-start;
+}
+
+.testimonial {
+  &__slides {
+    display: flex;
+    transition: transform 1s;
+    &--active {
+      transform: translateX(-50%);
+    }
+  }
+
+  &__slide {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__body {
+    line-height: 1.5rem;
+    margin: 80px 0 1.25rem;
+    opacity: 0.9;
+  }
+
+  &__person-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__person-name {
+    margin-bottom: 2px;
+  }
+
+  &__btns {
+    position: absolute;
+    left: 50%;
+    top: calc(250px + 3.5rem);
+    transform: translate(-50%, -50%);
+    border-radius: 19.6px;
+  }
+}
+
+//=============small tablets
+
+@media screen and (min-width: 576px) {
+  main,
+  .testimonial__slide {
+    max-width: 540px;
+  }
+}
+
+//=============tablets
+
+@media screen and (min-width: 768px) {
+  body {
+    background-size: 40%;
+  }
+
+  .bg-container {
+    max-width: 1260px;
+    background-position: center right 10%, top 30% left 20%;
+    background-size: 50%, 80px;
+  }
+
+  main,
+  .testimonial__slide {
+    width: 80vw;
+    max-width: 1000px;
+  }
+
+  main {
+    place-items: center;
+    padding-top: 44.8px;
+  }
+
+  .testimonial {
+    position: relative;
+
+    &__slide {
+      position: relative;
+      flex-direction: row;
+    }
+
+    &__img {
+      order: 2;
+      width: 50%;
+      margin-left: auto;
+    }
+
+    &__text {
+      position: absolute;
+      order: 1;
+      width: 55%;
+    }
+
+    &__body {
+      margin: 0 0 1.5rem;
+      line-height: 1.75rem;
+      text-align: start;
+    }
+
+    &__btns {
+      top: 100%;
+      left: 30%;
+    }
+
+    &__person-info {
+      text-align: start;
+    }
+  }
+}
+
+//==============large tablets & laptops
+
+@media screen and (min-width: 992px) {
+  .bg-container {
+    background-position: center right 10%, top 30% left 20%;
+    background-size: 50%, 100px;
+  }
+
+  .testimonial {
+    &__body {
+      line-height: 2.25rem;
+      text-align: start;
+    }
+
+    &__person-info {
+      text-align: start;
+      flex-direction: row;
+      align-items: flex-end;
+    }
+
+    &__person-name {
+      margin: 0;
+      padding-right: 0.6rem;
+    }
+  }
+}
+
+//==============desktop styles
+
+@media screen and (min-width: 1200px) {
+  .testimonial {
+    &__body {
+      line-height: 2.75rem;
+      text-align: start;
+    }
+
+    &__btns {
+      border-radius: 25.6px;
+    }
+
+    &__btn {
+      padding: 0.8rem 1.1rem;
+      font-size: 1.6rem;
+    }
+  }
+}
